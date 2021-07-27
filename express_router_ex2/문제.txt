@@ -1,0 +1,26 @@
+0. npm run dev -> nodemon app
+1. 필요한 모듈 require
+    - express, dotenv, morgan, path
+    -nodemon -> devDependencies
+
+2. listen - PORT는 설정 할 수 있도록(.env)
+
+3. 없는 페이지 + 오류처리
+
+4. 필요한 미들웨어 등록
+  - morgan
+
+  - express.static
+
+  - body-parser
+    - express.json()
+    - express.urlencoded({etended : false})
+
+5. 외부라우터
+  /board/list/게시판 -> 게시판 명은 변경이 되도록(URL 인수)
+  /board/view/게시글 번호 -> 게시글 번호는 변경이 되도록
+
+    /board/write/ -> GET 라우터 -> 작성양식
+                     POST 라우터 -> 글작성
+                     PATCH 라우터 -> 글수정
+                     DELETE 라우터 -> 글삭제

@@ -1,0 +1,45 @@
+{% extends '../layout.html' %}
+
+{% block content %}
+게시판 아이디 - {{ boardId }}
+
+<h1>반복문 출력</h1>
+{% for item in list %}
+	<div>{{ loop.index }}. {{ item }}</div>
+{% endfor %}
+
+<h1>조건문 출력</h1>
+<div>
+{% if city=='서울' %}
+  서울 시민 입니다...
+{% elif city=='경기도' %}
+  경기도민 입니다..
+{% elif city=='인천' %}
+  인천 시민 입니다...
+{% else %}
+  해외 동포 입니다...
+{% endif %}
+</div>
+
+<h1>간단한 조건식 출력</h1>
+<div>
+  {{'로그인 중...' if isLogin else '미 로그인...'}}
+</div>
+
+<h1>HTML 출력</h1>
+{{htmlData}}
+{{htmlData | safe}}
+
+{% endblock %}
+
+{% block content3 %}
+<h1>변수 설정</h1>
+{% set fruit = 'apple' %}
+과일 : {{fruit}} <br>
+
+{% set fruits = ["apple","orange","mango"] %}
+{% for item in fruits %}
+과일 : {{item}} <br>
+{% endfor %}
+
+{% endblock %}
